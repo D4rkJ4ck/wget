@@ -28,4 +28,4 @@
 
 mod flags;
 
-// pub use flags::*;
+pub use flags::*;
