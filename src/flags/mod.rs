@@ -12,8 +12,8 @@
 //!     + Main feature will be to download an entire website, mirroring a website [https://en.wikipedia.org/wiki/Mirror_site]
 
 mod background;
-mod multi_links;
 mod mirror;
-mod file_name;
-mod file_path;
+mod multi;
+mod name;
+mod path;
 mod rate_limit;

@@ -48,9 +48,9 @@ tree --dirsfirst
     |       |       |       + reject.rs
     |       |       |
     |       |       + background.rs
-    |       |       + file_name.rs
-    |       |       + file_path.rs
-    |       |       + multi_links.rs
+    |       |       + name.rs
+    |       |       + path.rs
+    |       |       + multi.rs
     |       |       + mod.rs
     |       |       + rate_limit.rs
     |       |
