@@ -3,17 +3,17 @@
 //! Example:
 //! ```
 //! $ cargo r -B https://pbs.twimg.com/media/EMtmPFLWkAA8CIS.jpg
-//! 
+//!
 //! Output will be written to "wget-log".
-//! 
+//!
 //! $ cat wget-log
-//! 
+//!
 //! start at 2017-10-14 03:46:06
 //! sending request, awaiting response... status 200 OK
 //! content size: 56370 [~0.06MB]
 //! saving file to: ./EMtmPFLWkAA8CIS.jpg
 //! Downloaded [https://pbs.twimg.com/media/EMtmPFLWkAA8CIS.jpg]
 //! finished at 2017-10-14 03:46:07
-//! 
+//!
 //! $
 //! ```

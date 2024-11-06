@@ -2,7 +2,7 @@
 //! ```
 //! wget https://some_url.ogr/file.zip
 //! ```
-//! 
+//!
 //! Additional Functionalities:
 //!     + Downloading a single file and saving it under a different name
 //!     + Downloading and saving the file in a specific directory

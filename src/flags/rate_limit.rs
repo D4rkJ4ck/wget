@@ -5,4 +5,3 @@
 //! $ cargo r --rate-limit=400k https://pbs.twimg.com/media/EMtmPFLWkAA8CIS.jpg
 //! ```
 //! This flag should accept different value types, example: k and M. So you can put the rate limit as `rate-limit=200k` or `rate-limit=2M`
-
