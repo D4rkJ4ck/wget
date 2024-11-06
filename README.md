@@ -5,19 +5,20 @@
 </h1>
 
 ## Table of Contents
-- [Overview]()
-- [Tech Stack]()
-- [Installation]()
-    - [Cloning]()
-    - [File Structure]()
-    - [Blueprints]()
-- [Usage]()
-- [Contributors]()
-- [License]()
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+    - [Cloning](#cloning)
+    - [File Structure](#file-structure)
+- [Usage](#usage)
+- [Contributors](#contributors)
+- [License](#license)
 
 ## Overview
 
-wget is a command line tool that allows users to download files from the internet.
+Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
+
+To see more about wget you can visit the manual by using the command man wget, or you can visit the website [here](https://www.gnu.org/software/wget/manual/wget.html).
 
 ## Tech Stack
 
@@ -68,3 +69,10 @@ tree --dirsfirst
     + gitify.sh
     + LICENSE
     + README.md
+
+## Usage
+
+## Contributors
+
+## License
+
