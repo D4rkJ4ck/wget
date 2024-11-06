@@ -38,12 +38,28 @@ tree --dirsfirst
     +----- src/
     |       |
     |       +--- flags/
-    |       |       +
+    |       |       |
+    |       |       +-- mirror/
+    |       |       |       |
+    |       |       |       + convert_links.rs
+    |       |       |       + exclude.rs
+    |       |       |       + mod.rs
+    |       |       |       + reject.rs
+    |       |       |
+    |       |       + background.rs
+    |       |       + links.rs
+    |       |       + mod.rs
+    |       |       + name.rs
+    |       |       + path.rs
+    |       |       + rate_limit.rs
     |       |
     |       + lib.rs
     |       + main.rs
     |
-    +-- todo/
+    +---- todo/
+    |       |
+    |       + audit.todo
+    |       + tasks.todo
     |
     + .gitignore
     + Cargo.lock
