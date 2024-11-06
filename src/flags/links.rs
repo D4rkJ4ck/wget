@@ -9,7 +9,7 @@
 //! http://ipv4.download.thinkbroadband.com/20MB.zip
 //! http://ipv4.download.thinkbroadband.com/10MB.zip
 //! 
-//! $ go run . -i=download.txt
+//! $ cargo r -i=download.txt
 //! content size: [10485760, 20971520]
 //! finished 10MB.zip
 //! finished 20MB.zip

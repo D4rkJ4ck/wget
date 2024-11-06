@@ -12,7 +12,7 @@
 //!
 //! It should look something like this
 //! ```
-//! $ go run . https://pbs.twimg.com/media/EMtmPFLWkAA8CIS.jpg
+//! $ cargo r https://pbs.twimg.com/media/EMtmPFLWkAA8CIS.jpg
 //!
 //! start at 2017-10-14 03:46:06
 //! sending request, awaiting response... status 200 OK
