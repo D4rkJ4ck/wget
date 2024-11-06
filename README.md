@@ -48,10 +48,10 @@ tree --dirsfirst
     |       |       |       + reject.rs
     |       |       |
     |       |       + background.rs
-    |       |       + links.rs
+    |       |       + file_name.rs
+    |       |       + file_path.rs
+    |       |       + multi_links.rs
     |       |       + mod.rs
-    |       |       + name.rs
-    |       |       + path.rs
     |       |       + rate_limit.rs
     |       |
     |       + lib.rs
