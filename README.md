@@ -49,7 +49,7 @@ start at 2017-10-14 03:46:06
 sending request, awaiting response... status 200 OK
 content size: 56370 [~0.06MB]
 saving file to: ./EMtmPFLWkAA8CIS.jpg
- 55.05 KiB / 55.05 KiB [================================================================================================================] 100.00% 1.24 MiB/s 0s
+ 55.05 KiB / 55.05 KiB [==============================================================] 100.00% 1.24 MiB/s 0s
 Downloaded [https://pbs.twimg.com/media/EMtmPFLWkAA8CIS.jpg]
 finished at 2017-10-14 03:46:07
 ```
