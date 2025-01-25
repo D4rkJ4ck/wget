@@ -6,23 +6,34 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
+        - [_Table of Contents ⤴️_](#table-of-contents-️)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
   - [Cloning](#cloning)
   - [File Structure](#file-structure)
+        - [_Table of Contents ⤴️_](#table-of-contents-️-1)
+- [Architecture](#architecture)
+  - [Entities](#entities)
 - [Usage](#usage)
   - [Background Download](#background-download)
   - [Custom Name](#custom-name)
   - [Custom Path](#custom-path)
   - [Rate Limit](#rate-limit)
   - [Different Files](#different-files)
+        - [_Table of Contents ⤴️_](#table-of-contents-️-2)
   - [Mirror a website](#mirror-a-website)
-    - [Type of Files](#types-of-files--reject-short-hand--r)
-    - [Directory-Based](#directory-based-limits---exclude-short-hand--x)
-    - [Convert Links for Offline Viewing](#convert-links-for-offline-viewing---convert-links)
+    - [Types of Files(--reject short hand -R)](#types-of-files--reject-short-hand--r)
+    - [Directory-Based Limits (--exclude short hand -X)](#directory-based-limits---exclude-short-hand--x)
+    - [Convert Links for Offline Viewing (--convert-links)](#convert-links-for-offline-viewing---convert-links)
+        - [_Table of Contents ⤴️_](#table-of-contents-️-3)
 - [Contributors](#contributors)
+  - [Collaborators](#collaborators)
+  - [Peers](#peers)
+  - [Testers](#testers)
 - [License](#license)
+        - [_Table of Contents ⤴️_](#table-of-contents-️-4)
 
 ## Overview
 
@@ -80,45 +91,79 @@ tree --dirsfirst
 
 ### File Structure
 
-    .
-    |
-    +----- src/
-    |       |
-    |       +--- flags/
-    |       |       |
-    |       |       +-- mirror/
-    |       |       |       |
-    |       |       |       + convert_links.rs
-    |       |       |       + exclude.rs
-    |       |       |       + mod.rs
-    |       |       |       + reject.rs
-    |       |       |
-    |       |       + background.rs
-    |       |       + name.rs
-    |       |       + path.rs
-    |       |       + multi.rs
-    |       |       + mod.rs
-    |       |       + rate_limit.rs
-    |       |
-    |       + lib.rs
-    |       + main.rs
-    |
-    +--- tests/
-    |
-    +---- todo/
-    |       |
-    |       + audit.todo
-    |       + tasks.todo
-    |
-    + .gitignore
-    + Cargo.lock
-    + Cargo.toml
-    + ferris.svg
-    + gitify.sh
-    + LICENSE
-    + README.md
+```
+📂./
+  |
+  +-📂 /scripts
+  |     |
+  |     +-📜 gitify.sh
+  |
+  +-📂 /src
+  |     |
+  |     +-📂 /flags
+  |     |     |
+  |     |     +-📂 /mirror
+  |     |     |     |
+  |     |     |     +-📄 convert_links.rs
+  |     |     |     +-📄 exclude.rs
+  |     |     |     +-📄 mod.rs
+  |     |     |     +-📄 reject.rs
+  |     |     |
+  |     |     +-📄 background.rs
+  |     |     +-📄 name.rs
+  |     |     +-📄 path.rs
+  |     |     +-📄 multi.rs
+  |     |     +-📄 mod.rs
+  |     |     +-📄 rate_limit.rs
+  |     |
+  |     +-📄 lib.rs
+  |     +-📄 main.rs
+  |
+  +-📂 /tests
+  |
+  +-📂 /todo
+  |     |
+  |     +-📝 audit.todo
+  |     +-📝 tasks.todo
+  |
+  +-🚫 .gitignore
+  +-🔒 Cargo.lock
+  +-⚙️ Cargo.toml
+  +-🏞 ferris.svg
+  +-🔑 LICENSE
+  +-📖 README.md
+```
 
 ###### [_Table of Contents ⤴️_](#table-of-contents)
+
+## Architecture
+
+```mermaid
+architecture-beta
+  group wget(logos:rust)[wget]
+  group src(logos:rust)[source] in wget
+
+  service input(logos:bash-icon)[input]
+  service args(logos:blocs)[args] in src
+  service downloader(logos:curl)[downloader] in src
+  service mirror(logos:rust)[mirror] in src
+  service output(logos:google-keep)[ouput] in wget
+
+  junction format in src
+
+  input:R -- L:format
+  mirror:B --> T:format
+  format:R --> L:args
+  args:T --> B:downloader
+  downloader:R --> L:output
+```
+
+### Entities
+
+```mermaid
+classDiagram
+
+```
 
 ## Usage
 
@@ -279,14 +324,15 @@ cargo r --mirror --convert-links https://example.com
 
 ### Collaborators
 
-[![ndiediop](https://shields.io/badge/ndiediop-Zone01-blue)](http://learn.zone01dakar.sn/git/ndiediop)
-[![fakeita](https://shields.io/badge/fakeita-Zone01-blue)](http://learn.zone01dakar.sn/git/fakeita)
-[![abdoulaziba](https://shields.io/badge/abdoulaziba-Zone01-blue)](http://learn.zone01dakar.sn/git/abdoulaziba)
-[![jefaye](https://shields.io/badge/jefaye-Zone01-blue)](http://learn.zone01dakar.sn/git/jefaye)
+[![ndiediop](https://shields.io/badge/ndiediop-Zone01-magenta)](http://learn.zone01dakar.sn/git/ndiediop)
+[![fakeita](https://shields.io/badge/fakeita-Zone01-magenta)](http://learn.zone01dakar.sn/git/fakeita)
+[![abdoulaziba](https://shields.io/badge/abdoulaziba-Zone01-cyan)](http://learn.zone01dakar.sn/git/abdoulaziba)
+[![jefaye](https://shields.io/badge/jefaye-Zone01-cyan)](http://learn.zone01dakar.sn/git/jefaye)
 
 ### Peers
 
 [![annndiaye](https://shields.io/badge/annndiaye-Zone01-blue)](http://learn.zone01dakar.sn/git/annndiaye)
+[![npouille](https://shields.io/badge/npouille-Zone01-blue)](http://learn.zone01dakar.sn/git/npouille)
 [![mamadbah](https://shields.io/badge/mamadbah-Zone01-blue)](http://learn.zone01dakar.sn/git/mamadbah)
 [![cheimbaye](https://shields.io/badge/cheimbaye-Zone01-blue)](http://learn.zone01dakar.sn/git/cheimbaye)
 
