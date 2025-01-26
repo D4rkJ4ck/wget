@@ -16,6 +16,7 @@
         - [_Table of Contents ⤴️_](#table-of-contents-️-1)
 - [Architecture](#architecture)
   - [Entities](#entities)
+  - [Sequence](#sequence)
 - [Usage](#usage)
   - [Background Download](#background-download)
   - [Custom Name](#custom-name)
@@ -142,19 +143,16 @@ tree --dirsfirst
 architecture-beta
   group wget(logos:rust)[wget]
   group src(logos:rust)[source] in wget
+  group pub(disk)[public] in wget
 
-  service input(logos:bash-icon)[input]
-  service args(logos:blocs)[args] in src
-  service downloader(logos:curl)[downloader] in src
-  service mirror(logos:rust)[mirror] in src
-  service output(logos:google-keep)[ouput] in wget
+  service args(logos:bash-icon)[args]
+  service parser(logos:blocs)[parser] in src
+  service downloader(logos:firefox)[downloader] in src
+  service output(logos:google-keep)[ouput] in pub
 
-  junction format in src
 
-  input:R -- L:format
-  mirror:B --> T:format
-  format:R --> L:args
-  args:T --> B:downloader
+  args:R --> L:parser
+  parser:B --> T:downloader
   downloader:R --> L:output
 ```
 
@@ -162,7 +160,41 @@ architecture-beta
 
 ```mermaid
 classDiagram
+  class Args {
+    <<struct>>
+    +background
+    +output
+    +path
+    +rate_limit
+    +input
+    +mirror
+    +reject
+    +exclude
+    +convert_links
+    +url
+  }
+  Parser ()-- Args
+  Debug ()-- Args
 
+  class Downloader {
+    <<struct>>
+    +download(args)
+  }
+
+  Args *-- Downloader: 
+
+```
+
+### Sequence
+
+```mermaid
+sequenceDiagram
+  participant Args
+  participant Downloader
+
+  Args ->> Args: Parse
+  Args ->> Downloader: Passed to
+  Downloader ->> Downloader: Get 
 ```
 
 ## Usage
