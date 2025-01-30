@@ -8,3 +8,4 @@ clap = { version = "4.5.27", features = ["derive"] }
 tokio = { version = "1.43.0", features = ["full"] }
 reqwest = { version = "0.12.12", features = ["stream"] }
 url = "2.5.4"
+indicatif = "0.17.11"
