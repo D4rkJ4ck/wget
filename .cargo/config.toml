@@ -1,0 +1,21 @@
+[build]
+
+# Directory name to store build artifacts
+# default: "target"
+target-dir = "build"
+
+# Additional rustc flags
+# default: []
+rustflags = ["-C", "target-cpu=native"]
+
+[term]
+
+# default: false
+verbose = true
+
+# default: 80
+progress_width = 100
+
+[env]
+
+RUST_BACKTRACE = true

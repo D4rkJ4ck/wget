@@ -17,6 +17,6 @@ struct_field_align_threshold = 20
 control_brace_style = "ClosingNextLine"
 fn_params_layout = "Tall"
 imports_layout = "Vertical"
-# indent_style = "Visual"
+indent_style = "Visual"
 imports_granularity = "One"
 group_imports = "StdExternalCrate"
