@@ -1,7 +1,10 @@
 use {
-    crate::utils::{
-        AppErr,
-        AppResult,
+    crate::{
+        debug,
+        utils::{
+            AppErr,
+            AppResult,
+        },
     },
     regex::Regex,
 };
@@ -19,24 +22,30 @@ pub(crate) struct RateLimit {
 }
 
 impl RateLimit {
-    pub(crate) fn parse(input: &str) -> AppResult<Self> {
-        match Regex::new(r"(\d+)([k|M])$")?.captures(input) {
+    pub(crate) fn parse(input: &str) -> Result<Self, clap::Error> {
+        let re = Regex::new(r"(\d+)([k|M])$")
+            .map_err(|e| debug!(e).into())?
+            .captures(input);
+
+        match re {
             Some(captures) => {
-                let value = match captures
+                let value = captures
                     .get(1)
-                    .map(|m| m.as_str())
-                {
+                    .map(|m| m.as_str());
+
+                let value = match value {
                     Some(num) => num.parse::<f64>()?,
-                    None => return Err(AppErr::InvalidInput),
+                    None => return Err(debug!(AppErr::InvalidInput)),
                 };
 
-                let unit = match captures
+                let unit = captures
                     .get(2)
-                    .map(|m| m.as_str())
-                {
+                    .map(|m| m.as_str());
+
+                let unit = match unit {
                     Some("k") => RateUnit::Kilobytes,
                     Some("M") => RateUnit::Megabytes,
-                    _ => return Err(AppErr::InvalidInput),
+                    _ => return Err(debug!(AppErr::InvalidInput)),
                 };
 
                 Ok(Self {
@@ -44,7 +53,7 @@ impl RateLimit {
                     unit,
                 })
             }
-            None => Err(AppErr::InvalidInput),
+            None => Err(debug!(AppErr::InvalidInput)),
         }
     }
 }

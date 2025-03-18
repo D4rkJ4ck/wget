@@ -1,17 +1,23 @@
 use {
-    super::AppErr,
-    crate::args::RateLimit,
-    clap::error::ErrorKind,
+    super::constants::{
+        GB,
+        KB,
+        MB,
+    },
+    chrono::Local,
 };
 
-pub(crate) fn parse_rate_limit_for_clap(
-    input: &str,
-) -> Result<RateLimit, clap::Error> {
-    RateLimit::parse(input).map_err(|e| match e {
-        AppErr::InvalidInput => clap::Error::raw(
-            ErrorKind::InvalidValue,
-            "Invalid rate limit input.\nMust be like '300k' of '2M'",
-        ),
-        _ => clap::Error::raw(ErrorKind::InvalidValue, "[ERROR] -> {e}."),
-    })
+pub fn disk_size_format(bytes: u64) -> String {
+    match bytes {
+        0..KB => format!("{} B", bytes),
+        KB..MB => format!("{:.2} KiB", bytes as f64 / KB as f64),
+        MB..GB => format!("{:.2} MiB", bytes as f64 / MB as f64),
+        _ => format!("{:.2} GiB", bytes as f64 / GB as f64),
+    }
+}
+
+pub fn format_time() -> String {
+    Local::now()
+        .format("%Y-%m-%d %H:%M:%S")
+        .to_string()
 }

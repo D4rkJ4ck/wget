@@ -10,15 +10,18 @@ pub enum AppErr {
     Regex(regex::Error),
     ParseFloat(num::ParseFloatError),
     InvalidInput,
+    Mirror(&'static str),
     Other(String),
 }
 
 impl fmt::Display for AppErr {
+    #[rustfmt::skip]
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             AppErr::Regex(e) => write!(f, "Regex Matching: {}", e),
             AppErr::ParseFloat(e) => write!(f, "Float Parsing: {}", e),
             AppErr::InvalidInput => write!(f, "Invalid input"),
+            AppErr::Mirror(option) => write!(f, "Cannot use {} without '--mirror'", option),
             AppErr::Other(msg) => write!(f, "{msg}"),
         }
     }
