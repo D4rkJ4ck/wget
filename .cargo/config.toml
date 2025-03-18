@@ -14,8 +14,8 @@ rustflags = ["-C", "target-cpu=native"]
 verbose = true
 
 # default: 80
-progress_width = 100
+# progress_width = 100
 
 [env]
 
-RUST_BACKTRACE = true
+RUST_BACKTRACE = "1"

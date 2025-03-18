@@ -8,7 +8,7 @@ pub struct Args {
     #[arg(short = 'O', help = "Customize Name")]
     pub output: Option<String>,
 
-    #[arg(short = 'P', default_value = "~/Download/", help = "Customize path")]
+    #[arg(short = 'P', help = "Customize path")]
     pub path: Option<String>,
 
     #[arg(long = "rate-limit", help = "Set rate limit [k / M]")]
@@ -37,7 +37,7 @@ impl Args {
     pub async fn validate(&self) -> Result<(), String> {
         if let Some(path) = &self.path {
             if !path.starts_with("~/") && !path.starts_with('/') {
-                return Err("Path must start with '˜/'or '/'".to_string());
+                return Err("Path must start with '~/'or '/'".to_string());
             }
         }
 

@@ -1,4 +1,7 @@
-use {clap::Parser, wget::Args};
+use {
+    clap::Parser,
+    wget::Args,
+};
 
 #[tokio::main]
 async fn main() {
