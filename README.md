@@ -32,7 +32,6 @@
 - [Contributors](#contributors)
   - [Collaborators](#collaborators)
   - [Peers](#peers)
-  - [Testers](#testers)
 - [License](#license)
         - [_Table of Contents ⤴️_](#table-of-contents-️-4)
 
@@ -363,13 +362,7 @@ cargo r --mirror --convert-links https://example.com
 
 ### Peers
 
-[![annndiaye](https://shields.io/badge/annndiaye-Zone01-blue)](http://learn.zone01dakar.sn/git/annndiaye)
 [![npouille](https://shields.io/badge/npouille-Zone01-blue)](http://learn.zone01dakar.sn/git/npouille)
-[![mamadbah](https://shields.io/badge/mamadbah-Zone01-blue)](http://learn.zone01dakar.sn/git/mamadbah)
-[![cheimbaye](https://shields.io/badge/cheimbaye-Zone01-blue)](http://learn.zone01dakar.sn/git/cheimbaye)
-
-### Testers
-
 [![eibounda](https://shields.io/badge/eibounda-Zone01-red)](http://learn.zone01dakar.sn/git/eibounda)
 
 ## License

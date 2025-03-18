@@ -1,0 +1,42 @@
+    # ---------- GENERAL ----------
+    unstable_features = true
+    max_width = 75
+    chain_width = 10
+    use_try_shorthand = true
+    format_strings = true
+    
+    # ---------- IMPORTS ----------
+    imports_granularity = "One"
+    group_imports = "StdExternalCrate"
+    imports_layout = "Vertical"
+    
+    # ---------- BRACES ----------
+    control_brace_style = "ClosingNextLine"
+    empty_item_single_line = false
+    single_line_if_else_max_width = 70
+    single_line_let_else_max_width = 70
+    
+    # ---------- FUNCTIONS ----------
+    # fn_params_layout = "Vertical"
+    fn_call_width = 50
+    fn_single_line = true
+    attr_fn_like_width = 50
+    
+    # ---------- COMMENTS ----------
+    comment_width = 100
+    format_code_in_doc_comments = true
+    wrap_comments = true
+    
+    # ---------- STRUCTS ----------
+    struct_field_align_threshold = 50
+    struct_lit_single_line = false
+    use_field_init_shorthand = true
+    merge_derives = false
+    
+    # ---------- IMPL ----------
+    reorder_impl_items = true
+    where_single_line = true
+    
+    # ---------- ARRAYS ----------
+    array_width = 10
+    
