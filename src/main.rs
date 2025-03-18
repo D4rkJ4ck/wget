@@ -7,8 +7,8 @@ use {
 async fn main() {
     let args: Args = match Args::try_parse() {
         Ok(args) => args,
-        Err(error) => {
-            eprint!("{error}");
+        Err(e) => {
+            dbg!(e);
             return;
         }
     };
