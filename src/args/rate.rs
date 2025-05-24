@@ -22,9 +22,9 @@ pub(crate) struct RateLimit {
 }
 
 impl RateLimit {
-    pub(crate) fn parse(input: &str) -> Result<Self, clap::Error> {
-        let re = Regex::new(r"(\d+)([k|M])$")
-            .map_err(|e| debug!(e).into())?
+    pub(crate) fn parse(input: &str) -> AppResult<Self> {
+        let re = Regex::new(r"(\d+)([k|M])$")?
+            // .map_err(|e| debug!(e).into())?
             .captures(input);
 
         match re {
