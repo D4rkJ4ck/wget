@@ -1,5 +1,5 @@
 <h1 align=center>
-    <img alt="Ferris" src="./ferris.svg">
+    <img alt="Ferris" src="./public//ferris.svg">
     <br>
     wget
 </h1>
@@ -8,10 +8,12 @@
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
+        - [_Table of Contents ⤴️_](#table-of-contents-️)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
   - [Cloning](#cloning)
   - [File Structure](#file-structure)
+        - [_Table of Contents ⤴️_](#table-of-contents-️-1)
 - [Architecture](#architecture)
   - [Entities](#entities)
   - [Sequence](#sequence)
@@ -21,14 +23,17 @@
   - [Custom Path](#custom-path)
   - [Rate Limit](#rate-limit)
   - [Different Files](#different-files)
+        - [_Table of Contents ⤴️_](#table-of-contents-️-2)
   - [Mirror a website](#mirror-a-website)
     - [Types of Files(--reject short hand -R)](#types-of-files--reject-short-hand--r)
     - [Directory-Based Limits (--exclude short hand -X)](#directory-based-limits---exclude-short-hand--x)
     - [Convert Links for Offline Viewing (--convert-links)](#convert-links-for-offline-viewing---convert-links)
+        - [_Table of Contents ⤴️_](#table-of-contents-️-3)
 - [Contributors](#contributors)
   - [Collaborators](#collaborators)
   - [Peers](#peers)
 - [License](#license)
+        - [_Table of Contents ⤴️_](#table-of-contents-️-4)
 
 ## Overview
 

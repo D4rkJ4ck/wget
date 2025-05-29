@@ -22,6 +22,7 @@ async fn download(
         .get(url)
         .send()
         .await?;
+    
     let total_size = response
         .content_length()
         .unwrap_or(0);

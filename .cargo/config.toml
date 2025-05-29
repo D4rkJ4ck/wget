@@ -11,7 +11,7 @@ rustflags = ["-C", "target-cpu=native"]
 [term]
 
 # default: false
-verbose = true
+# verbose = true
 
 # default: 80
 # progress_width = 100
